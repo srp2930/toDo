@@ -10,4 +10,4 @@ ToDo.prototype = {
 };
 
 
-module.exports = ToDo
+module.exports = ToDo;

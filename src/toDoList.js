@@ -1,4 +1,9 @@
-var ToDoList = function() {
+var ToDoList = function() {};
+
+ToDoList.prototype = {
+	addToDo: function() {
+		
+	}
 
 };
 

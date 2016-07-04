@@ -9,7 +9,7 @@ describe('ToDo', function() {
 	var toDo;
 
 	beforeEach(function() {
-		toDo = new ToDo();
+		toDo = new ToDo('Eat breakfast');
 	});
 
 
@@ -17,5 +17,21 @@ describe('ToDo', function() {
 		expect(toDo).to.be.an.instanceof(ToDo);
 	});
 
-});
+  it('can store and retrieve a task string', function() {
+    assert.typeOf(toDo.task, 'string', 'task should be a string');
+  });
 
+  it('can store and retrieve a task', function() {
+    assert.equal(toDo.task, 'Eat breakfast');
+  });
+
+  it('has initial status of incomplete', function() {
+    assert.equal(toDo.isComplete, false);
+  });
+
+  it('once done, has status of complete', function() {
+    toDo.finished();
+    assert.equal(toDo.isComplete, true);
+  });
+
+});

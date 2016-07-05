@@ -7,11 +7,11 @@ var ToDoList = require('../src/toDoList')
 describe('ToDoList', function() {
 
   var toDoList;
-  var toDoSpy;
+  var ToDoSpy;
 
   beforeEach(function() {
-    toDoList = new ToDoList();
-    toDoSpy = sinon.spy();
+    ToDoSpy = sinon.spy();
+    toDoList = new ToDoList(ToDoSpy);
   });
 
   it('can create a new to do list', function() {
@@ -20,7 +20,7 @@ describe('ToDoList', function() {
 
   it('can store a new task in a to do object', function() {
   	toDoList.addToDo('Eat breakfast');
-  	expect(toDoSpy).to.have.been.calledWithNew;
+  	expect(ToDoSpy).to.have.been.calledWithNew;
   });
 
 });

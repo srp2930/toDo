@@ -1,8 +1,12 @@
-var ToDoList = function() {};
+// require ToDo
+
+var ToDoList = function(ToDo) {
+  this.ToDo = ToDo();
+};
 
 ToDoList.prototype = {
-	addToDo: function() {
-
+	addToDo: function(task) {
+    var todo = new this.ToDo(task);
 	}
 
 };

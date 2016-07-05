@@ -2,16 +2,14 @@ var assert = require('chai').assert;
 var expect = require('chai').expect;
 var sinon = require("sinon");
 
-var ToDoList = require('../src/toDoList')
+var ToDoList = require('../src/toDoList');
 
 describe('ToDoList', function() {
 
   var toDoList;
-  var toDoSpy;
 
   beforeEach(function() {
     toDoList = new ToDoList();
-    toDoSpy = sinon.spy();
   });
 
   it('can create a new to do list', function() {
@@ -20,7 +18,7 @@ describe('ToDoList', function() {
 
   it('can store a new task in a to do object', function() {
   	toDoList.addToDo('Eat breakfast');
-  	expect(toDoSpy).to.have.been.calledWithNew;
+  	expect(toDoList.tasks[0]).to.contain({task: 'Eat breakfast'});
   });
 
 });

@@ -1,7 +1,13 @@
-var ToDoList = function() {};
+var ToDo = require('../src/toDo');
+
+var ToDoList = function() {
+  this.tasks = [];
+};
 
 ToDoList.prototype = {
-	addToDo: function() {
+	addToDo: function(task) {
+    var toDo = new ToDo(task);
+    this.tasks.push(toDo);
 
 	}
 

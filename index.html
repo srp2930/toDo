@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>To Do List</title>
     <!-- <link rel="stylesheet" href="/css/master.css" media="screen"> -->
-    <script src="src/toDo.js"></script>
-    <script src="src/toDoList.js"></script>
+    <script src="src/task.js"></script>
+    <script src="src/list.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
   </head>
 
@@ -17,11 +17,10 @@
     <script type="mustache/x-tmpl" id="taskList">
       <ul>
         {{#agenda}}
-          <li>this.tasks</li>
+          <li>{{task}}s</li>
         {{/agenda}}
       </ul>
     </script>
-<% %>
     <script type="text/javascript">
       // fetchs tuff
       var data = {agenda: [{task: 'Eat breakfast'},
@@ -30,11 +29,9 @@
                         ]
                       };
 
-      // get template and put stuff inside it
-      // var tmpl = document.getElementById('taskList').innerHTML;
-      // var html = Mustache.to_html(tmpl, data);
+      var tmpl = document.getElementById('taskList').innerHTML;
+      var html = Mustache.to_html(tmpl, data);
 
-      // render to page
       var box = document.getElementById("box");
       box.innerHTML = html;
     </script>

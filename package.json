@@ -8,12 +8,14 @@
     "http-server": "^0.9.0",
     "mocha": "^2.5.3",
     "mustache": "^2.2.1",
-    "sinon": "^1.17.4"
+    "sinon": "^1.17.4",
+    "zombie": "^4.2.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "mocha test",
-    "build": "mustache dataView.json myTemplate.mustache > public/output.html"
+    "build": "mustache dataView.json myTemplate.mustache > public/output.html",
+    "start": "node_modules/http-server/bin/http-server"
   },
   "author": "",
   "license": "ISC"

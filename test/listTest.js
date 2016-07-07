@@ -25,7 +25,7 @@ describe('List', function() {
   it('prints out tasks in html format', function() {
     list.addToDo('Buy chocolate');
     list.addToDo('Eat the chocolate');
-    expect(list.printHTML()).to.eql("<li>Buy chocolate</li><li>Eat the chocolate</li>");
+    expect(list.printHTML()).to.eql("<li>Buy chocolate - not completed</li><li>Eat the chocolate - not completed</li>");
   });
 
 });

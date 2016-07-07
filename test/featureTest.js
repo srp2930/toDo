@@ -1,27 +1,40 @@
-var app = require('http-server').createServer();
+var http = require('http-server')
 var Browser = require('zombie');
 var assert = require('assert');
+var server = http.createServer();
 
 describe('homepage', function() {
-  before(function(){
-    this.server = app.listen(3000);
-    this.browser = new Browser({site: 'http://localhost:3000'})
-  })
-  before(function(done) {
-    this.browser.visit('/', done);
+  beforeEach(function(done){
+    server.listen(3000);
+    browser = new Browser({site: 'http://localhost:3000'})
+    browser.visit('/', done);
   });
 
+  afterEach(function() {
+    server.close();
+  });
+
+
+
   it('should show the title', function() {
-    this.browser.assert.text('title', 'My task list');
+    browser.assert.text('title', 'My task list');
   });
 
   it('should have a form on the page', function() {
-    this.browser.assert.element('form')
+    browser.assert.element('form')
   })
 
   it('should add a task to the page', function() {
-    this.browser.fill('task', 'Eat midget gems');
-    this.browser.pressButton('Add to list');
-    this.browser.assert.text('#classlist', 'Eat midget gems');
+    browser.fill('task', 'Eat midget gems');
+    browser.pressButton('Add to list');
+    browser.assert.text('#classlist', 'Eat midget gems - not completed');
   })
+
+  it('should show when tasks have been completed', function() {
+    browser.fill('task', 'Eat chocolate raisins');
+    browser.pressButton('Add to list');
+    browser.assert.text('#classlist', 'Eat chocolate raisins - not completed');
+  })
+
+
 });

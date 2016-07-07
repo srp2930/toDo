@@ -26,12 +26,12 @@ describe('Task', function() {
   });
 
   it('has initial status of incomplete', function() {
-    assert.equal(task.isComplete, false);
+    assert.equal(task._isComplete, false);
   });
 
   it('once done, has status of complete', function() {
     task.finished();
-    assert.equal(task.isComplete, true);
+    assert.equal(task._isComplete, true);
   });
 
 });

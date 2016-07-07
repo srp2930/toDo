@@ -1,12 +1,20 @@
 (function(exports) {
   var Task = function(task) {
     this.task = task;
-    this.isComplete = false;
+    this._isComplete = false;
   };
 
   Task.prototype = {
+    isComplete: function() {
+      if (this._isComplete===true) {
+        return 'completed'
+      } else {
+        return 'not completed'
+      }
+    },
+
     finished: function() {
-      this.isComplete = true;
+      this._isComplete = true;
     },
   };
 

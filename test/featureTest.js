@@ -27,14 +27,26 @@ describe('homepage', function() {
   it('should add a task to the page', function() {
     browser.fill('task', 'Eat midget gems');
     browser.pressButton('Add to list');
-    browser.assert.text('#classlist', 'Eat midget gems - not completed');
+    browser.assert.text('#classlist', 'Eat midget gems - not completed Done');
   })
 
   it('should show when tasks have been completed', function() {
     browser.fill('task', 'Eat chocolate raisins');
     browser.pressButton('Add to list');
-    browser.assert.text('#classlist', 'Eat chocolate raisins - not completed');
+    browser.assert.text('#classlist', 'Eat chocolate raisins - not completed Done');
   })
 
+  it('should show a button to press when task has been completed', function() {
+    browser.fill('task', 'Wash clothes');
+    browser.pressButton('Add to list');
+    browser.assert.text('#classlist', 'Wash clothes - not completed Done');
+  })
+
+  it('should show task is completed when the button Done has been pressed', function() {
+    browser.fill('task', 'Make food');
+    browser.pressButton('Add to list');
+    return browser.pressButton('Done');
+    browser.assert.text('#classlist', 'Make food - completed Done');
+  });
 
 });

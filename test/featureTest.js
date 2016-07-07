@@ -45,7 +45,7 @@ describe('homepage', function() {
   it('should show task is completed when the button Done has been pressed', function() {
     browser.fill('task', 'Make food');
     browser.pressButton('Add to list');
-    return browser.pressButton('Done');
+    browser.pressButton('Done');
     browser.assert.text('#classlist', 'Make food - completed Done');
   });
 

@@ -15,13 +15,10 @@
   	},
 
     printHTML: function() {
-      console.log(this.tasks);
+      this.html = [];
       for(var i = 0; i < this.tasks.length; i++) {
         this.html.push("<li>"+this.tasks[i].task+"</li>");
       }
-      console.log('++++++++++');
-      // console.log(this.html);
-      console.log('=========');
       return this.html.join('')
     },
   };

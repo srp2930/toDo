@@ -46,6 +46,7 @@ describe('homepage', function() {
     browser.fill('task', 'Make food');
     browser.pressButton('Add to list');
     browser.pressButton('Done');
+    browser.wait(7000);
     browser.assert.text('#classlist', 'Make food - completed Done');
   });
 

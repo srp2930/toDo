@@ -2,7 +2,7 @@
   var List = function(Task) {
     this.Task = Task;
     this.tasks = [];
-    this.mustacheList = {tasks: this.tasks }
+    // this.mustacheList = {tasks: this.tasks }
     this.html = [];
   };
 

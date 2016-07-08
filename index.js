@@ -9,6 +9,6 @@ submitform.addEventListener('submit', function(event) {
 });
 
 list.addEventListener('click', function(event) {
-  tasklist.tasks[event.srcElement.id.slice(-1)].finished()
+  tasklist.tasks[event.target.id.slice(-1)].finished();
   list.innerHTML = tasklist.printHTML();
 })

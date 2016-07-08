@@ -2,6 +2,7 @@ var http = require('http-server')
 var Browser = require('zombie');
 var assert = require('assert');
 var server = http.createServer();
+var sinon = require('sinon');
 
 describe('homepage', function() {
   beforeEach(function(done){
@@ -14,7 +15,10 @@ describe('homepage', function() {
     server.close();
   });
 
-
+  it('should show the content of the API on the page when rendered', function() {
+    browser.wait(1500)
+    browser.assert.text('#task_0', 'Go to the bank - not completed Done')
+  });
 
   it('should show the title', function() {
     browser.assert.text('title', 'My task list');

@@ -15,7 +15,7 @@
     printHTML: function() {
       this.html = [];
       for(var i = 0; i < this.tasks.length; i++) {
-        this.html.push("<li>"+this.tasks[i].task+" - "+ this.tasks[i].isComplete() + "<button id='done_" + i + "'> Done</button>" + "</li>" +"");
+        this.html.push("<li id='task_" + i +"'>" +this.tasks[i].task+" - "+ this.tasks[i].isComplete() + "<button id='done_" + i + "'> Done</button>" + "</li>" +"");
       }
       return this.html.join('')
     },

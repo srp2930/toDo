@@ -16,7 +16,7 @@ describe('homepage', function() {
   });
 
   it('should show the content of the API on the page when rendered', function() {
-    browser.wait(1500)
+    // browser.wait(1500)
     browser.assert.text('#task_0', 'Go to the bank - not completed Done')
   });
 

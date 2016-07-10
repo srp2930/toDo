@@ -30,6 +30,7 @@ submitform.addEventListener('submit', function(event) {
 });
 
 list.addEventListener('click', function(event) {
-  tasklist.tasks[event.target.id.slice(-1)].finished();
+  console.log(event.target.id.slice(5));
+  tasklist.tasks[event.target.id.slice(5)].finished();
   list.innerHTML = tasklist.printHTML();
 });
